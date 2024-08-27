@@ -1,0 +1,28 @@
+.target-highlight {
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
+}
+
+.target-secondary-highlight {
+
+  animation-name: example-secondary;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+@keyframes example-secondary {
+  from {background-color: black;}
+  to {background-color: blue;}
+}
+
+.target-opposite-highlight {
+  opacity: 0.0;
+}
