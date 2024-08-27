@@ -23,9 +23,9 @@
 2. Co to vlastně znamená krokově:
     1. Nějaký společný interface na props, kde je aspoň `isOpen`, `close` - https://github.com/mff-uk/dataspecer/blob/df071a86eba76910792c637105e078317e8d5146/applications/conceptual-model-editor/src/app/diagram/dialog/create-class-dialog.tsx#L27
     2. Ten je rozšířený o další properties dle používání, třeba `onSelectConfirmCallback?: (newEntityID: string[]) => void;` ... nebo tady `model` a `pozice`
-    3. Context má props a open metodu v rámci, které se nastaví `isOpen` na true, dále open má typicky parametry, kde se nastaví ty specifické props - třeba ten callback
+    3. Context má `props` a `open` metodu v rámci, které se nastaví `isOpen` na true, dále `open` má typicky parametry, kde se nastaví ty specifické `props` - třeba ten callback
     4. V dialogs-context.tsx je pak provider dialogových kontextů - vrací pouze tu open metodu, nic jiného.
-    5. open metoda pak vrací tu samotnou komponentu s nastavenými props, tak jak se open zavolalo
+    5. `open` metoda pak vrací tu samotnou komponentu s nastavenými props, tak jak se `open` zavolalo
 
 ### Dělení na kontext, komponenta, controller - co je co?
 - Komponenta je jasná
@@ -35,7 +35,7 @@
 -----------
 ## Otázky obecně:
 1) code-style obecný - asi máme stejný akorát if/else píšu jinak 
-2) Psaní objektů na jeden řádek ... například { x: 0, y: 0 }
+2) Psaní objektů na jeden řádek ... například `{ x: 0, y: 0 }`
 3) Kam s typama
 4) Metody uvnitř metod
 5) Jak by se měly řešit takové ty mapy ohledně indentace ... například https://github.com/mff-uk/dataspecer/blob/47e589e7fd77f02d05543b472273dd99053e36de/applications/conceptual-model-editor/src/app/diagram/reactflow/alignment.ts#L351-L358
@@ -55,7 +55,7 @@
 
 ----------------
 ## Alignment otázky:
-1) Měl bych nějak počítat s možnými změnami diagramu, které nevychází od uživatele, například - U alignmentu se počítá, že se se seznam vrcholů nezmění po začátku táhnutí (dá se asi vyřešit skrz useStore, nebo useEffect spíš je otázka jestli to má cenu)
+1) Měl bych nějak v budoucích rozšířeních CME počítat s možnými změnami diagramu, které nevychází od uživatele, například - U alignmentu se počítá, že se se seznam vrcholů nezmění po začátku táhnutí (dá se asi vyřešit skrz useStore, nebo useEffect spíš je otázka jestli to má cenu)
 
 2) Pozice ve vizuálním modelu vs snapgrid - https://github.com/mff-uk/dataspecer/blob/9d89ded5bf2388fd2a2b83742d0c686946337238/packages/core-v2/src/visual-model/visual-model.ts#L183-L194
 
